@@ -31,5 +31,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
             heroku_api_key: ${{secrets.HEROKU_APP}}
-            heroku_app_name: "joke-app" #Must be unique in Heroku
+            heroku_app_name: "joke-app-pierre-boitelle-esgi" #Must be unique in Heroku
             heroku_email: "pi.boitelle@gmail.com"
