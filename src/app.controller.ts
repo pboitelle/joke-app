@@ -14,7 +14,6 @@ export class AppController {
   // root() {
   //   return { message: 'Hello world!' };
   // }
-  
   @Get()
   async getJoke() {
     try {
