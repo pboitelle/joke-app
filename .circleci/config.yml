@@ -44,6 +44,7 @@ workflows:
 
       - heroku/deploy-via-git:
           app-name: joke-app
+          api-key: JOKE_APP_PBOITELLE
           requires:
             - node/run
             - node/test
