@@ -43,7 +43,7 @@ workflows:
                 - circleci
 
       - heroku/deploy-via-git:
-          app-name: "joke-app"
+          app-name: joke-app
           requires:
             - node/run
             - node/test
