@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.0.2
+  heroku: circleci/heroku@1.2.6
 
 # jobs:
 #   build-test:
@@ -36,6 +37,16 @@ workflows:
 
       - node/run:
           npm-run: build
+          filters:
+            branches:
+              only: 
+                - circleci
+
+      - heroku/deploy-via-git:
+          app-name: "joke-app-circleci-pboitelle1"
+          requires:
+            - node/run
+            - node/test
           filters:
             branches:
               only: 
