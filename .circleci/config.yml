@@ -3,26 +3,32 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
 
-jobs:
-  build-test:
-    docker: 
-      - image: cimg/base:stable
+# jobs:
+#   build-test:
+#     docker: 
+#       - image: cimg/base:stable
 
-    steps:
-      - checkout
-      - node/install:
-          node-version: "16.13"
-      - node/install-packages:
-          cache-path: ~/project/node_modules
+#     steps:
+#       - checkout
+#       - node/install:
+#           node-version: "16.13"
+#       - node/install-packages:
+#           cache-path: ~/project/node_modules
 
-      - run: npm install
-      - run: npm run build
-      - run: npm test
+#       - run: npm install
+#       - run: npm run build
+#       - run: npm test
 
 workflows:
-  node-test:
+  build:
     jobs:
-      - build-test: 
+      - node-test:
+          filters:
+            branches:
+              only: 
+                - circleci
+      - node/run:
+          npm-run: build
           filters:
             branches:
               only: 
