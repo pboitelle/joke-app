@@ -43,7 +43,7 @@ workflows:
                 - circleci
 
       - heroku/deploy-via-git:
-          app-name: joke-app-pboitelle1
+          app-name: joke-app-circleci-pboitelle1
           api-key: JOKE_APP_PBOITELLE
           requires:
             - node/run
